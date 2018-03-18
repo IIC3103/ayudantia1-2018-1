@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :new_route_with_specific_user]
 
   # GET /users
   # GET /users.json
@@ -61,6 +61,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def new_route_with_specific_user
+    puts params #para ver que esta llegando
+    puts params[:id]
+    puts @user
+  end
+
+  def new_route_without_specific_user
+    puts params #para ver que esta llegando
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
